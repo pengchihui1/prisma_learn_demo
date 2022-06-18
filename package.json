@@ -1,0 +1,22 @@
+{
+  "name": "prisma_learn_demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:pengchihui1/prisma_learn_demo.git",
+  "author": "pengchihui1 <pengchihui1@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.15.2",
+    "@types/node": "^18.0.0",
+    "next": "12.1.6",
+    "next-connect": "^0.12.2",
+    "postcss": "^8.4.14",
+    "prisma": "^3.15.2",
+    "tailwindcss": "^3.0.24",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.4"
+  }
+}
