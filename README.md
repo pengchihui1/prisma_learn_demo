@@ -1,14 +1,19 @@
 
 ## 起始
+```
 mkdir hello-prisma 
 cd hello-prisma
 npm init -y 
 npm install prisma typescript ts-node @types/node --save-dev
+```
 
 ## .env定义数据库连接
+```
 DATABASE_URL="postgres://postgres@localhost:5432/prisma_test"
+```
 
 ## prisma/schema.prisma数据库表格映射字段
+```
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
@@ -39,14 +44,20 @@ model User {
   posts   Post[]
   profile Profile?
 }
+```
 
 ## prisma创建表
+```
 npx prisma migrate dev --name init
+```
 
 ## Prisma 客户端
+```
 npm install @prisma/client
+```
 
 ## node文件（index.ts）
+```
 import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
@@ -78,18 +89,25 @@ main()
   .finally(async () => {
     await prisma.$disconnect()
   })
+ ```
 
 ## 常用方法
 
 ## 运行node写入数据库
+```
 npx ts-node index.ts
+```
 
 # 资料档案
+```
 prisma：https://www.prisma.io/
+```
 
 
 ## 注意事项
+```
 window下node版本需要控制在16.13.2及以下像版本16.15.1这种高版本会使npm直接爆出一个点的错误
+```
 
 ## postgresql
 ### Prisma Migrate
@@ -163,6 +181,7 @@ Domain types	n/a	Not yet
 
 ## mysql
 ### Prisma Migrate
+```
 Data model	MySQL	Notes
 String	VARCHAR(191)	
 Boolean	BOOLEAN	In MySQL BOOLEAN is a synonym for TINYINT(1)
@@ -172,9 +191,11 @@ Float	DOUBLE
 Decimal	DECIMAL(65,30)	
 DateTime	DATETIME(3)	
 Json	JSON	Supported in MySQL 5.7+ only
-Bytes	LONGBLOB	
+Bytes	LONGBLOB
+```	
 
 ### Native type mappings
+```
 MySQL	Prisma	Supported	Native database type attribute	Notes
 serial	BigInt	✔️	@db.UnsignedBigInt @default(autoincrement())	
 bigint	BigInt	✔️	@db.BigInt	
@@ -221,3 +242,4 @@ multipoint	Unsupported	Not yet
 multilinestring	Unsupported	Not yet		
 multipolygon	Unsupported	Not yet		
 geometrycollection	Unsupported	Not yet	
+```
