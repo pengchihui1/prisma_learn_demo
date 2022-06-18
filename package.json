@@ -9,7 +9,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "generate":"yarn run generate:prisma",
+    "generate":"yarn run prisma migrate dev --name init",
     "generate:prisma":"yarn generate"
   },
   "dependencies": {
